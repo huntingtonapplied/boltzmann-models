@@ -1,0 +1,7 @@
+{
+  "project": "boltzmann",
+  "crafts": [
+    "boltzmann_carrier_density_v1"
+  ],
+  "version": "0.1.0"
+}
