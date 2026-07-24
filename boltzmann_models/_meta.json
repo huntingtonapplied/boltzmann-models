@@ -1,0 +1,9 @@
+{
+  "project": "boltzmann",
+  "crafts": [
+    "boltzmann_carrier_density_v1",
+    "boltzmann_fab_inverse_v1",
+    "boltzmann_fab_doping_v1"
+  ],
+  "version": "0.2.0"
+}

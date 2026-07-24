@@ -1,0 +1,45 @@
+{
+  "craft_id": "boltzmann_fab_inverse_v1",
+  "version": "0.1.0",
+  "project": "boltzmann",
+  "format": "safetensors",
+  "framework": "pytorch",
+  "weights_file": "model.safetensors",
+  "total_parameters": 17708,
+  "dtype": "float32",
+  "status": "trained",
+  "description": "Fabrication INVERSE designer (cVAE) \u2014 target structure descriptor \u2192 candidate process recipe (the RL/proposer workflow).",
+  "input": {
+    "kind": "device_spec",
+    "spec_version": "1.0",
+    "note": "Provide a physical device/scene specification; see the project's model docs."
+  },
+  "output": {
+    "kind": null,
+    "channels": [],
+    "device_family": null,
+    "note": "Physical fields; de-normalization to physical units is applied inside the package."
+  },
+  "io": {
+    "outputs": {
+      "channels": [],
+      "count": 0,
+      "kind": null
+    }
+  },
+  "solution_compatibility": null,
+  "tags": [
+    "solution_type:fabrication",
+    "device_family:fabrication"
+  ],
+  "metrics": {
+    "best_val_loss": 0.2716231942176819,
+    "held_out_accuracy": 0.8041
+  },
+  "provenance": {
+    "author": "Huntington Applied",
+    "trained_at": null
+  },
+  "pipeline": "compiled",
+  "weights_published": true
+}
