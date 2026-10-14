@@ -1,0 +1,78 @@
+{
+  "craft_id": "boltzmann_carrier_density_v1",
+  "version": "0.1.0",
+  "project": "boltzmann",
+  "format": "safetensors",
+  "framework": "pytorch",
+  "weights_file": "model.safetensors",
+  "total_parameters": 97286,
+  "dtype": "float32",
+  "status": "trained",
+  "description": null,
+  "input": {
+    "kind": "device_spec",
+    "spec_version": "1.0",
+    "fields": {
+      "geometry": "rectilinear grid: per-axis coords in micrometers, or shape [Nx,Ny,Nz]",
+      "regions": "[{type: NA|ND, material: Si|GaAs|InGaAs, concentration: <cm^-3>}]",
+      "electrodes": "optional [{id, role: anode|cathode, bounds: [[i0,i1],[j0,j1],[k0,k1]]}]",
+      "operating_point": "{applied_bias_v: <V>, bias_sweep_v?: [<V>...], temperature_k?: <K>}"
+    }
+  },
+  "output": {
+    "kind": "fields",
+    "channels": [
+      "n",
+      "p",
+      "psi",
+      "Jx",
+      "Jy",
+      "Jz"
+    ],
+    "device_family": "pn_diode",
+    "note": "Physical fields; de-normalization to physical units is applied inside the package."
+  },
+  "io": {
+    "outputs": {
+      "channels": [
+        "n",
+        "p",
+        "psi",
+        "Jx",
+        "Jy",
+        "Jz"
+      ],
+      "count": 6,
+      "kind": "fields"
+    }
+  },
+  "solution_compatibility": {
+    "solution_type": "DC",
+    "models": [
+      "charge_transport"
+    ],
+    "training_domain": {
+      "ranges": {
+        "vds": {
+          "min": 0.0,
+          "max": 0.8
+        }
+      },
+      "temperature_k": 300.0
+    }
+  },
+  "tags": [
+    "solution_type:DC",
+    "model:charge_transport",
+    "family:pn_diode"
+  ],
+  "metrics": {
+    "held_out_accuracy": 0.851
+  },
+  "provenance": {
+    "author": "Huntington Applied",
+    "trained_at": "2026-07-02T00:58:26.896922"
+  },
+  "pipeline": "compiled",
+  "weights_published": true
+}
